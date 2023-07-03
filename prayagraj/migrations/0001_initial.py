@@ -35,8 +35,8 @@ class Migration(migrations.Migration):
                 ('number', models.CharField(max_length=12)),
                 ('comment', models.CharField(max_length=500)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('call_status', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='gorakhpur.call_status')),
-                ('status', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='gorakhpur.status')),
+                ('call_status', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='prayagraj.call_status')),
+                ('status', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='prayagraj.status')),
             ],
         ),
         migrations.CreateModel(
@@ -46,8 +46,8 @@ class Migration(migrations.Migration):
                 ('interested_type', models.CharField(blank=True, choices=[('DIGITAL MARKETING', 'DIGITAL MARKETING'), ('SOFTWARE', 'SOFTWARE'), ('WEBSITE', 'WEBSITE'), ('MOBILE APP', 'MOBILE APP'), ('GAME', 'GAME'), ('OTHERS', 'OTHERS')], max_length=100, null=True)),
                 ('comment', models.TextField()),
                 ('follow_up', models.DateTimeField(blank=True, null=True)),
-                ('call_status', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='gorakhpur.call_status')),
-                ('response', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='gorakhpur.response')),
+                ('call_status', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='prayagraj.call_status')),
+                ('response', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='prayagraj.response')),
             ],
         ),
         migrations.CreateModel(
@@ -55,7 +55,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('comment', models.CharField(max_length=500)),
-                ('response', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='gorakhpur.response')),
+                ('response', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='prayagraj.response')),
             ],
         ),
         migrations.CreateModel(
@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('comment', models.CharField(max_length=500)),
-                ('response', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='gorakhpur.response')),
+                ('response', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='prayagraj.response')),
             ],
         ),
     ]

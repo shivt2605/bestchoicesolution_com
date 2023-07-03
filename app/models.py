@@ -5,10 +5,10 @@ from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
 from django.contrib.auth.models import User
-from ckeditor.fields import RichTextField
-from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils import timezone
 from  embed_video.fields  import  EmbedVideoField
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 class Categories(models.Model):
@@ -46,7 +46,7 @@ class Service(models.Model):
     created_at = models.DateField(auto_now_add=True)
     author = models.ForeignKey(Plat_Form,on_delete=models.CASCADE,null=True)
     description = models.TextField()
-    full_description = models.TextField()
+    full_description = RichTextField()
     price = models.IntegerField(null=True,default=0)
     discount = models.IntegerField(null=True)
     slug = models.SlugField(default='', max_length=500, null=True, blank=True)

@@ -262,7 +262,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="mb-0">{{service.author.name}}</h4>
-                            <span>iOS Developer & UI Designer</span>
+                            <span>{{service.author.about_author}}</span>
                         </div>
                     </div>
 
@@ -318,7 +318,7 @@
                             </div>
                         </div>
                     </div>                    
-                    <p class="mb-6 line-height-md">{{service.author.about_author}}</p>
+                    <p class="mb-6 line-height-md">{{service.full_description|safe}}</p>
                     
                 </div>       
             </div>
