@@ -36,7 +36,7 @@ class Interested (models.Model):
     )
     response = models.ForeignKey(Response,on_delete=models.CASCADE)
     interested_type = models.CharField(choices=INTERESTED_TYPE,max_length=100,null=True, blank=True)
-    comment = models.CharField(max_length=500,null=True, blank=True)
+    comment = models.TextField()
     follow_up = models.DateTimeField(null=True, blank=True)
     call_status = models.ForeignKey(Call_Status,on_delete=models.CASCADE,null=True, blank=True) 
 

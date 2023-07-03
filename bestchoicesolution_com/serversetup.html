@@ -1,4 +1,16 @@
 bestchoicesolution;
+
+sudo apt update && upgrade
+
+sudo apt install python3-pip python3-dev nginx
+
+
+sudo pip3 install virtualenv
+
+sudo -u postgres psql
+
+CREATE DATABASE bestchoicesolution;
+
 CREATE USER bestchoicesolution WITH PASSWORD 'TIWARI@123';
 
 ALTER ROLE bestchoicesolution SET client_encoding TO 'utf8';
