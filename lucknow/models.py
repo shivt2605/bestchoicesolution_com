@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-#----------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
 class Status(models.Model):    
     status = models.CharField(max_length=500)
     def __str__(self):
@@ -11,7 +11,7 @@ class Call_Status(models.Model):
     name = models.CharField(max_length=500)
     def __str__(self):
         return self.name
-#----------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 class Response(models.Model):
     response_from = models.CharField(max_length=500)
@@ -23,7 +23,7 @@ class Response(models.Model):
     call_status = models.ForeignKey(Call_Status,on_delete=models.CASCADE,null=True, blank=True)    
     def __str__(self):
         return self.response_from + " -- " + self.name + " -- " + self.number + " -- " + self.comment
-#----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 class Interested (models.Model):
     INTERESTED_TYPE = (
@@ -36,15 +36,15 @@ class Interested (models.Model):
     )
     response = models.ForeignKey(Response,on_delete=models.CASCADE)
     interested_type = models.CharField(choices=INTERESTED_TYPE,max_length=100,null=True, blank=True)
-    comment = models.TextField()
+    comment = models.CharField(max_length=500)
     follow_up = models.DateTimeField(null=True, blank=True)
     call_status = models.ForeignKey(Call_Status,on_delete=models.CASCADE,null=True, blank=True) 
 
     def __str__(self):
         return self.comment
-#----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#----------------------------------------------------------------------------   
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 class For_Job(models.Model):
     response = models.ForeignKey(Response,on_delete=models.CASCADE)
     comment = models.CharField(max_length=500)
@@ -52,11 +52,11 @@ class For_Job(models.Model):
         return self.comment
 
 
-#----------------------------------------------------------------------------  
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------  
 class For_Coaching(models.Model):
     response = models.ForeignKey(Response,on_delete=models.CASCADE)
     comment = models.CharField(max_length=500)
     def __str__(self):
         return self.comment
     
-#----------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------

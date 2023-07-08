@@ -21,7 +21,7 @@ class For_Coaching_TabularInline(admin.TabularInline):
 class response_admin(admin.ModelAdmin):
     list_display = ('id', 'name', 'number', 'status', 'created_at', 'comment','call_status' )
     list_filter = ('status', 'created_at', 'call_status' )
-    list_editable = ( 'name', 'number','status','call_status')
+    list_editable = ( 'name','status','call_status',)
     search_fields = ('id', 'name', 'number',)
     list_per_page = 25
     inlines = (Interested_TabularInline,For_Coaching_TabularInline)

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'embed_video',
     'ckeditor',
     'ckeditor_uploader',
+    'visit',
 ]
 
 MIDDLEWARE = [
@@ -92,12 +93,15 @@ WSGI_APPLICATION = 'bestchoicesolution_com.wsgi.application'
 
 DATABASES = {
    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'bestchoicesolution',
-       'USER': 'bestchoicesolution',
-       'PASSWORD': 'TIWARI@123',
-       'HOST': 'localhost',
-       'PORT': '',
+       
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
+      # 'ENGINE': 'django.db.backends.postgresql',
+       #'NAME': 'bestchoicesolution',
+      # 'USER': 'bestchoicesolution',
+       #'PASSWORD': 'TIWARI@123',
+       #'HOST': 'localhost',
+       #'PORT': '',
    }
 }
 

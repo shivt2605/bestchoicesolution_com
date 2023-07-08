@@ -6,24 +6,27 @@ class Status(models.Model):
     status = models.CharField(max_length=500)
     def __str__(self):
         return self.status
-
+#------------------------------------------------------------------------------------
 class Call_Status(models.Model):    
     name = models.CharField(max_length=500)
     def __str__(self):
         return self.name
 #----------------------------------------------------------------------------
 
+
+
 class Response(models.Model):
     response_from = models.CharField(max_length=500)
     name = models.CharField(max_length=500)
     number = models.CharField(max_length=12)
     status = models.ForeignKey(Status,on_delete=models.CASCADE)
-    comment = models.CharField(max_length=500)
+    comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)    
     call_status = models.ForeignKey(Call_Status,on_delete=models.CASCADE,null=True, blank=True)    
     def __str__(self):
         return self.response_from + " -- " + self.name + " -- " + self.number + " -- " + self.comment
 #----------------------------------------------------------------------------
+
 
 class Interested (models.Model):
     INTERESTED_TYPE = (
