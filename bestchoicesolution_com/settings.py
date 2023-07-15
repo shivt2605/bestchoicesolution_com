@@ -94,9 +94,9 @@ WSGI_APPLICATION = 'bestchoicesolution_com.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
-        NAME': 'bestchoicesolution',
+       'NAME': 'bestchoicesolution',
        'USER': 'bestchoicesolution',
-        'PASSWORD': 'TIWARI@123',
+       'PASSWORD': 'TIWARI@123',
        'HOST': 'localhost',
        'PORT': '',
    }
