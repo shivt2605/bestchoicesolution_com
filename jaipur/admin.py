@@ -23,7 +23,7 @@ class response_admin(admin.ModelAdmin):
     list_editable = ( 'name','status','call_status',)
     search_fields = ('id', 'name', 'number',)
     list_per_page = 25
-    inlines = (Interested_TabularInline,For_Coaching_TabularInline)
+    inlines = (Interested_TabularInline,For_Coaching_TabularInline,For_Job_TabularInline)
 
 
 class Interested_admin(admin.ModelAdmin):
