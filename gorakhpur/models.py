@@ -50,7 +50,7 @@ class Interested (models.Model):
 #----------------------------------------------------------------------------   
 class For_Job(models.Model):
     response = models.ForeignKey(Response,on_delete=models.CASCADE)
-    comment = models.CharField(max_length=500)
+    comment = models.TextField()
     def __str__(self):
         return self.comment
 
@@ -58,7 +58,7 @@ class For_Job(models.Model):
 #----------------------------------------------------------------------------  
 class For_Coaching(models.Model):
     response = models.ForeignKey(Response,on_delete=models.CASCADE)
-    comment = models.CharField(max_length=500)
+    comment = models.TextField()
     def __str__(self):
         return self.comment
     

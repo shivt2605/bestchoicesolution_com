@@ -46,7 +46,7 @@ class Visit(models.Model):
     email_id = models.CharField(max_length=100,null=True, blank=True)
     featured_image = models.ImageField(upload_to="featuredimg",null=True)
     map_link = models.TextField(null=True, blank=True)
-    comment = models.CharField(max_length=500)
+    comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     visit_response = models.ForeignKey(Visit_Response,on_delete=models.CASCADE,null=True, blank=True)
     call_status = models.ForeignKey(Call_Status,on_delete=models.CASCADE,null=True, blank=True)   
@@ -67,7 +67,7 @@ class Image(models.Model):
 class Meeting(models.Model):
     visit = models.ForeignKey(Visit,on_delete=models.CASCADE,null=True, blank=True)
     date = models.DateTimeField(null=True, blank=True)
-    comment = models.CharField(max_length=500,null=True, blank=True)
+    comment = models.TextField()
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------
 

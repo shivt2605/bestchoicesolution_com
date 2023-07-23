@@ -18,7 +18,7 @@ class Response(models.Model):
     name = models.CharField(max_length=500)
     number = models.CharField(max_length=12)
     status = models.ForeignKey(Status,on_delete=models.CASCADE)
-    comment = models.CharField(max_length=500)
+    comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)    
     call_status = models.ForeignKey(Call_Status,on_delete=models.CASCADE,null=True, blank=True)    
     def __str__(self):
@@ -47,7 +47,7 @@ class Interested (models.Model):
 #----------------------------------------------------------------------------   
 class For_Job(models.Model):
     response = models.ForeignKey(Response,on_delete=models.CASCADE)
-    comment = models.CharField(max_length=500)
+    comment = models.TextField()
     def __str__(self):
         return self.comment
 
@@ -55,7 +55,7 @@ class For_Job(models.Model):
 #----------------------------------------------------------------------------  
 class For_Coaching(models.Model):
     response = models.ForeignKey(Response,on_delete=models.CASCADE)
-    comment = models.CharField(max_length=500)
+    comment = models.TextField()
     def __str__(self):
         return self.comment
     
